@@ -1,39 +1,39 @@
 # Robust Classification by Coupling Data Mollification with Label Smoothing
 
+Implementation of supervised mollification: couple image noising with label smoothing (AISTATS 2025).
+
 Code for paper [Robust Classification by Coupling Data Mollification with Label Smoothing](https://arxiv.org/abs/2406.01494) (AISTATS 2025)
 
 ## Abstract 
 
-Introducing training-time augmentations is a key technique to enhance generalization and prepare deep neural networks against test-time corruptions. Inspired by the success of generative diffusion models, we propose a novel approach of coupling data mollification, in the form of image noising and blurring, with label smoothing to align predicted label confidences with image degradation. The method is simple to implement, introduces negligible overheads, and can be combined with existing augmentations. We demonstrate improved robustness and uncertainty quantification on the corrupted image benchmarks of the CIFAR and TinyImageNet datasets.
+> Introducing training-time augmentations is a key technique to enhance generalization and prepare deep neural networks against test-time corruptions. Inspired by the success of generative diffusion models, we propose a novel approach of coupling data mollification, in the form of image noising and blurring, with label smoothing to align predicted label confidences with image degradation. The method is simple to implement, introduces negligible overheads, and can be combined with existing augmentations. We demonstrate improved robustness and uncertainty quantification on the corrupted image benchmarks of the CIFAR and TinyImageNet datasets.
 
 ## TLDR
 
-We propose training image classifier by augmenting training images with noise+blur, and coupling this with corresponding amounts of label smoothing. 
+We propose training image classifier by **augmenting training images with noise+blur**, and coupling this with corresponding amounts of **label smoothing**. 
 
-In pseudo-code this is:
+In pseudo-code:
 
 ```python
 def training_batch(x,y):
 
   t = uniform(x)  # in [0,1]
 
-  # blur or noise input batch
-  x = blur( x, schedule_blur(t) )   # scheduler for blur magnitude 
-  x = noise( x, schedule_noise(t) ) # scheduler for noise magnitude
+  # blur and noise input batch
+  x = blur( x, schedule_blur(t) )    # scheduler for amount of blur 
+  x = noise( x, schedule_noise(t) )  # scheduler for amount of noise
 
   # labels to onehot and then relax between [0,1]
   y = onehot(y)
-  y = label_smooth( y, schedule_label(t) )  # scheduler for label decay magnitude
+  y = label_smooth( y, schedule_label(t) )  # scheduler for amount of label decay
 
-  # predict/backprop as usual
+  # predict/loss/backprop/train as usual
   logit = predict(x)
   loss = lossfunc(logit, y)
 
 ```
 
 ## Repository details
-
-Implementation of supervised mollification: couple image noising with label smoothing (AISTATS 2025) 
 
 Repo supports CIFAR-10, CIFAR-100, TinyImagenet and various network architectures.
 
@@ -69,9 +69,11 @@ Feel free to contact me via email (markus.o.heinonen@aalto.fi) if you have any i
 
 When using this repository in your work, please consider citing our paper
 
+```
 @inproceedings{heinonen2025,
   author    = {Markus Heinonen and Ba-Hien Tran and Michael Kampffmeyer and Maurizio Filippone},
   title     = {Robust Classification by Coupling Data Mollification with Label Smoothing},
   booktitle = {AISTATS},
   year      = {2025}
 }
+```
