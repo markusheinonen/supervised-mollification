@@ -4,12 +4,12 @@ Implementation of supervised mollification: couple image noising with label smoo
 
 Code for paper [Robust Classification by Coupling Data Mollification with Label Smoothing](https://arxiv.org/abs/2406.01494) (AISTATS 2025) by Markus Heinonen, Ba-Hien Tran, Michael Kampffmeyer and Maurizio Filippone
 
+![](assets/fig1.png)
+
 
 ## Abstract 
 
 > Introducing training-time augmentations is a key technique to enhance generalization and prepare deep neural networks against test-time corruptions. Inspired by the success of generative diffusion models, we propose a novel approach of coupling data mollification, in the form of image noising and blurring, with label smoothing to align predicted label confidences with image degradation. The method is simple to implement, introduces negligible overheads, and can be combined with existing augmentations. We demonstrate improved robustness and uncertainty quantification on the corrupted image benchmarks of the CIFAR and TinyImageNet datasets.
-
-![](assets/fig1.png)
 
 ## TLDR
 
