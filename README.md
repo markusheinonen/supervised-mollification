@@ -8,6 +8,8 @@ Code for paper [Robust Classification by Coupling Data Mollification with Label 
 
 > Introducing training-time augmentations is a key technique to enhance generalization and prepare deep neural networks against test-time corruptions. Inspired by the success of generative diffusion models, we propose a novel approach of coupling data mollification, in the form of image noising and blurring, with label smoothing to align predicted label confidences with image degradation. The method is simple to implement, introduces negligible overheads, and can be combined with existing augmentations. We demonstrate improved robustness and uncertainty quantification on the corrupted image benchmarks of the CIFAR and TinyImageNet datasets.
 
+![](assets/fig1.png)
+
 ## TLDR
 
 We propose training image classifier by **augmenting training images with noise+blur**, and coupling this with corresponding amounts of **label smoothing**. 
