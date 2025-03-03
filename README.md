@@ -2,7 +2,8 @@
 
 Implementation of supervised mollification: couple image noising with label smoothing.
 
-Code for paper [Robust Classification by Coupling Data Mollification with Label Smoothing](https://arxiv.org/abs/2406.01494) (AISTATS 2025)
+Code for paper [Robust Classification by Coupling Data Mollification with Label Smoothing](https://arxiv.org/abs/2406.01494) (AISTATS 2025) by Markus Heinonen, Ba-Hien Tran, Michael Kampffmeyer and Maurizio Filippone
+
 
 ## Abstract 
 
