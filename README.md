@@ -10,7 +10,7 @@ Introducing training-time augmentations is a key technique to enhance generaliza
 
 We propose training image classifier by augmenting the training images with noise or blur, and coupling this with equal amounts of label smoothing. In pseudo-code this is:
 
-```
+```python
 def training_batch(x,y):
 
   t = uniform(x)  # in [0,1]
