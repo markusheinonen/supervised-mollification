@@ -1,6 +1,6 @@
 # Robust Classification by Coupling Data Mollification with Label Smoothing
 
-Implementation of supervised mollification: couple image noising with label smoothing (AISTATS 2025).
+Implementation of supervised mollification: couple image noising with label smoothing.
 
 Code for paper [Robust Classification by Coupling Data Mollification with Label Smoothing](https://arxiv.org/abs/2406.01494) (AISTATS 2025)
 
